@@ -4,6 +4,13 @@
 
 BaseUrl => http:localhost://8000
 
+here add the frontend url in the origin
+
+server.use(cors({
+  origin:"",
+  credentials: true
+}))
+
 # authentication
 
   1. signUp => BaseUrl+ /signUp

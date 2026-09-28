@@ -9,13 +9,19 @@ const userRouter = require("./routes/user");
 
 const server = express();
 
+server.use(
+  cors({
+    origin: "",
+    credentials: true,
+  }),
+);
 server.use(express.json());
 server.use(cookieParser());
 
 server.use("/", authRouter);
 server.use("/", profileRouter);
 server.use("/", connectionRouter);
-server.use('/', userRouter)
+server.use("/", userRouter);
 
 connectDB()
   .then(() => {
